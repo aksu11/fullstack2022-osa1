@@ -15,7 +15,7 @@ const anecdotes = [
 const App = () => {
   const [selected, setSelected] = useState(0)
   const [points, setPoints] = useState(Array(anecdotes.length).fill(0))
-	const [mostVoted, setMostvoted] = useState(null)
+  const [mostVoted, setMostvoted] = useState(null)
 
   const vote = () => {
     const copy = [ ...points ]
