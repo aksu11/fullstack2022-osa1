@@ -16,7 +16,6 @@ const App = () => {
   const [selected, setSelected] = useState(0)
   const [points, setPoints] = useState(Array(anecdotes.length).fill(0))
 	const [mostVoted, setMostvoted] = useState(null)
-	console.log('selected: ', selected)
 
   const vote = () => {
     const copy = [ ...points ]
@@ -26,9 +25,7 @@ const App = () => {
   }
   
   const draw = () => {
-    console.log(points)
-    console.log('mostvoted: ', mostVoted)
-		let rand = selected
+    let rand = selected
     do {
       rand = Math.floor(Math.random() * anecdotes.length)
     } while (rand === selected)
@@ -42,7 +39,7 @@ const App = () => {
       <div>has {points[selected]} votes</div>
       <button onClick={() => vote()}>Vote</button>
       <button onClick={() => draw()}>Next anecdote</button>
-			<div>
+      <div>
         <h1>Anecdote with most votes</h1>
         <div>{anecdotes[mostVoted]}</div>
         {mostVoted !== null ? <div>has {points[mostVoted]} votes</div> : null}
